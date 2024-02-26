@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import Container from 'typedi';
 
-import { ServerConfig } from './config/serverConfig';
+import { ServerConfig } from './configs/server-config';
 import {
   RoutingControllersOptions,
   createExpressServer,
@@ -14,7 +14,7 @@ export const routingControllerOptions: RoutingControllersOptions = {
   classTransformer: true
 };
 
-export const createServer = ({
+export const createServer = async ({
   serverConfig
 }: {
   serverConfig: ServerConfig;

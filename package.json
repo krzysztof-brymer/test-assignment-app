@@ -4,19 +4,21 @@
   "description": "Awesome project developed with TypeORM.",
   "type": "commonjs",
   "scripts": {
-    "start": "ts-node src/app.ts",
     "build": "npx tsc",
+    "start": "ts-node src/app.ts",
     "dev": "nodemon -q src/app.ts",
+    "test": "NODE_ENV=test jest",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "eslint \"src/**/*.ts\" --fix",
     "typeorm": "ts-node ./node_modules/typeorm/cli",
-    "typeorm:run-migrations": "npm run typeorm migration:run -- -d ./src/dataSource.ts",
-    "typeorm:revert-migration": "npm run typeorm -- -d ./src/dataSource.ts migration:revert",
-    "typeorm:generate-migration": "npm run typeorm -- -d ./src/dataSource.ts migration:generate ./src/migration/$npm_config_name",
-    "typeorm:create-blank-migration": "npm run typeorm -- migration:create ./src/migration/$npm_config_name"
+    "typeorm:run-migrations": "npm run typeorm migration:run -- -d ./src/database/data-source.ts",
+    "typeorm:revert-migration": "npm run typeorm -- -d ./src/database/data-source.ts migration:revert",
+    "typeorm:generate-migration": "npm run typeorm -- -d ./src/database/data-source.ts migration:generate ./src/database/migrations/$npm_config_name",
+    "typeorm:create-blank-migration": "npm run typeorm -- migration:create ./src/migrations/database/$npm_config_name"
   },
   "dependencies": {
+    "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
     "pg": "^8.4.0",
     "reflect-metadata": "^0.1.13",
