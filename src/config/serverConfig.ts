@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 
 dotenv.config();
 
@@ -13,9 +13,9 @@ export interface ServerConfig {
 
 export const serverConfig: ServerConfig = {
   port: Number(process.env.PORT) ?? 8888,
-  host: process.env.HOST ?? "localhost",
+  host: process.env.HOST ?? 'localhost',
   basicAuth: {
-    username: process.env.BASIC_AUTH_USERNAME ?? "test",
-    password: process.env.BASIC_AUTH_PASSWORD ?? "testpw",
-  },
+    username: process.env.BASIC_AUTH_USERNAME ?? 'test',
+    password: process.env.BASIC_AUTH_PASSWORD ?? 'testpw'
+  }
 };

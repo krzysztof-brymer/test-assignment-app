@@ -1,21 +1,21 @@
-import "reflect-metadata";
-import Container from "typedi";
+import 'reflect-metadata';
+import Container from 'typedi';
 
-import { ServerConfig } from "./config/serverConfig";
+import { ServerConfig } from './config/serverConfig';
 import {
   RoutingControllersOptions,
   createExpressServer,
-  useContainer,
-} from "routing-controllers";
+  useContainer
+} from 'routing-controllers';
 
 export const routingControllerOptions: RoutingControllersOptions = {
   middlewares: [],
   controllers: [],
-  classTransformer: true,
+  classTransformer: true
 };
 
 export const createServer = ({
-  serverConfig,
+  serverConfig
 }: {
   serverConfig: ServerConfig;
 }) => {
