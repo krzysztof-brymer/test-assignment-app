@@ -1,0 +1,38 @@
+@localhost = http://localhost:8888
+
+### ---------- LOCALHOST ENDPOINTS ---------- ###
+
+### Get all users ###
+
+GET {{localhost}}/users
+Authorization: Basic test:testpw
+
+### Get user by id ###
+
+GET {{localhost}}/users/e2cf553a-217f-4b2a-8e13-b056d0a3ddfd
+Authorization: Basic test:testpw
+
+### Create user ###
+POST {{localhost}}/users
+Authorization: Basic test:testpw
+Content-Type: application/json
+
+{
+    "name": "test3",
+    "email": "test@mail.com"
+}
+
+### Update user by id ###
+PUT {{localhost}}/users/339ca0cb-60f0-4793-a1bc-38e2d5e76703
+Authorization: Basic test:testpw
+Content-Type: application/json
+
+{
+    "name": "sss",
+    "email": "nieemail@wp.pl"
+}
+
+### Delete user by id ###
+DELETE {{localhost}}/users/6315fed4-75fa-43b6-8cc6-b47fdf02a3b4
+Authorization: Basic test:testpw
+Content-Type: application/json

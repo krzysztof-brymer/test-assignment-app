@@ -7,10 +7,14 @@ import {
   createExpressServer,
   useContainer
 } from 'routing-controllers';
+import { UserController } from './controllers/user-controller';
+import { ValidateUuidMiddleware } from './middlewares/uuid-param-validator';
+import { CustomErrorHandler } from './middlewares/custom-error-handler';
 
 export const routingControllerOptions: RoutingControllersOptions = {
-  middlewares: [],
-  controllers: [],
+  middlewares: [ValidateUuidMiddleware, CustomErrorHandler],
+  controllers: [UserController],
+  defaultErrorHandler: false,
   classTransformer: true
 };
 
