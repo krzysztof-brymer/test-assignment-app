@@ -4,8 +4,7 @@ import { dataSource, initializeDb } from '../database/data-source';
 import { User } from '../database/entities/User';
 import server from '../server';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export let testServer: any;
+export let testServer;
 
 let userRepository: Repository<User>;
 
@@ -24,6 +23,8 @@ afterEach(async () => {
 });
 
 afterAll(async () => {
+  testServer.close();
+
   await dataSource.dropDatabase().catch(error => console.error(error));
 
   await dataSource.destroy().catch(error => console.error(error));
