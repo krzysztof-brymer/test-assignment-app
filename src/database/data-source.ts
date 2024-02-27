@@ -11,6 +11,8 @@ export const dataSource = new DataSource({
   subscribers: []
 });
 
+console.log(dbConfig);
+
 export const initializeDb = async ({
   dataSource
 }: {

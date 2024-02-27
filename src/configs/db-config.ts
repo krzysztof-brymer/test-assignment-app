@@ -6,6 +6,9 @@ dotenv.config();
 const isTestEnvironment =
   process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() === 'test';
 
+console.log(isTestEnvironment);
+console.log(process.env.NODE_ENV);
+
 export const dbConfig: PostgresConnectionOptions = isTestEnvironment
   ? {
       type: 'postgres',
@@ -30,8 +33,8 @@ export const dbConfig: PostgresConnectionOptions = isTestEnvironment
       password: process.env.POSTGRES_DB_PASSWORD ?? 'default_password',
       database: process.env.POSTGRES_DB_NAME ?? 'postgres',
       useUTC: true,
-      synchronize: Boolean(process.env.POSTGRES_DB_SYNCHRONIZATION) ?? false,
+      synchronize: Boolean(process.env.POSTGRES_DB_SYNCHRONIZATION) ?? true,
       logging: false,
       logger: 'advanced-console',
-      migrationsRun: Boolean(process.env.POSTGRES_DB_AUTO_MIGRATIONS) ?? false
+      migrationsRun: Boolean(process.env.POSTGRES_DB_AUTO_MIGRATIONS) ?? true
     };

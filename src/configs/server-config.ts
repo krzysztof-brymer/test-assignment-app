@@ -19,3 +19,12 @@ export const serverConfig: ServerConfig = {
     password: process.env.BASIC_AUTH_PASSWORD ?? 'testpw'
   }
 };
+
+export const serverConfigTest: ServerConfig = {
+  port: Number(process.env.PORT_TEST) ?? 8887,
+  host: process.env.HOST ?? 'localhost',
+  basicAuth: {
+    username: process.env.BASIC_AUTH_USERNAME ?? 'test',
+    password: process.env.BASIC_AUTH_PASSWORD ?? 'testpw'
+  }
+};

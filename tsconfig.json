@@ -27,10 +27,17 @@
     "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "node",
+      "jest"
+    ] /* Specify a set of type declaration files to be included in the compilation */
   },
   "compileOnSave": true /* Enables compile on save for this project */,
-  "include": [/* Specifies the files which will be compiled */ "src/**/*"],
+  "include": [
+    /* Specifies the files which will be compiled */ "src/**/*",
+    "jest.config.ts"
+  ],
   "exclude": [
     /* Specifies the files which will be excluded from the build */
     "node_modules"
