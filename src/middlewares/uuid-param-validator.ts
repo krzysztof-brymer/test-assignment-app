@@ -10,7 +10,7 @@ export class ValidateUuidMiddleware implements ExpressMiddlewareInterface {
 
     if (!isUUID(id)) {
       res.status(400).json({
-        message: 'Invalid UUID format for parameter id.'
+        message: 'Invalid UUID format for parameter ID.'
       });
 
       return;

@@ -1,6 +1,5 @@
 import { Response } from 'express';
 import {
-  //   Authorized,
   Body,
   Delete,
   Get,
@@ -17,22 +16,23 @@ import { UserService } from '../services/user-service';
 import { CreateUser } from '../models/requests/create-user';
 import { ValidateUuidMiddleware } from '../middlewares/uuid-param-validator';
 import { UpdateUser } from '../models/requests/update-user';
-import { CustomErrorHandler } from '../middlewares/custom-error-handler';
+import { CustomErrorHandlerMiddleware } from '../middlewares/custom-error-handler';
+import { BasicAuthMiddleware } from '../middlewares/basic-authorization';
 
 @JsonController()
 @Service()
+@UseBefore(BasicAuthMiddleware)
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  //   @Authorized()
   @Get('/users')
+  @UseBefore(BasicAuthMiddleware)
   async getAllUsers(): Promise<User[]> {
     console.info(`Get all customers from DB.`);
 
     return await this.userService.findAllUsers();
   }
 
-  //   @Authorized()
   @Get('/users/:id')
   @UseBefore(ValidateUuidMiddleware)
   getSingleUser(@Param('id') id: string): Promise<User> {
@@ -41,7 +41,6 @@ export class UserController {
     return this.userService.findUserById(id);
   }
 
-  //   @Authorized()
   @Post('/users')
   public async createNewUser(
     @Body() body: CreateUser,
@@ -56,9 +55,8 @@ export class UserController {
       .send({ message: 'User successfully created.', user: { ...result } });
   }
 
-  //   @Authorized()
   @Put('/users/:id')
-  @UseBefore(CustomErrorHandler, ValidateUuidMiddleware)
+  @UseBefore(CustomErrorHandlerMiddleware, ValidateUuidMiddleware)
   async updateUserDetails(
     @Param('id') id: string,
     @Body() body: UpdateUser,
@@ -76,7 +74,6 @@ export class UserController {
         });
   }
 
-  //   @Authorized()
   @Delete('/users/:id')
   @UseBefore(ValidateUuidMiddleware)
   async removeUser(

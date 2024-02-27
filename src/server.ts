@@ -9,13 +9,19 @@ import {
 } from 'routing-controllers';
 import { UserController } from './controllers/user-controller';
 import { ValidateUuidMiddleware } from './middlewares/uuid-param-validator';
-import { CustomErrorHandler } from './middlewares/custom-error-handler';
+import { CustomErrorHandlerMiddleware } from './middlewares/custom-error-handler';
+import { BasicAuthMiddleware } from './middlewares/basic-authorization';
 
 export const routingControllerOptions: RoutingControllersOptions = {
-  middlewares: [ValidateUuidMiddleware, CustomErrorHandler],
+  middlewares: [
+    BasicAuthMiddleware,
+    ValidateUuidMiddleware,
+    CustomErrorHandlerMiddleware
+  ],
   controllers: [UserController],
   defaultErrorHandler: false,
-  classTransformer: true
+  classTransformer: true,
+  validation: true
 };
 
 export const createServer = async ({

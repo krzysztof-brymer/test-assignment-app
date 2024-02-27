@@ -10,8 +10,10 @@ import { Service } from 'typedi';
 
 @Service()
 @Middleware({ type: 'after' })
-export class CustomErrorHandler implements ExpressErrorMiddlewareInterface {
-  error(error: any, req: Request, res: Response, next: NextFunction): void {
+export class CustomErrorHandlerMiddleware
+  implements ExpressErrorMiddlewareInterface
+{
+  error(error: any, _req: Request, res: Response, next: NextFunction): void {
     let status: number;
     let message: string;
     let errors = undefined;

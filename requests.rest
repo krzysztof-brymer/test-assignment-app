@@ -9,7 +9,7 @@ Authorization: Basic test:testpw
 
 ### Get user by id ###
 
-GET {{localhost}}/users/e2cf553a-217f-4b2a-8e13-b056d0a3ddfd
+GET {{localhost}}/users/0b66c48b-1368-4295-b06b-98816828037
 Authorization: Basic test:testpw
 
 ### Create user ###
