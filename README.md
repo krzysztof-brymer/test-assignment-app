@@ -83,6 +83,22 @@ npm test
 
 Make sure your environment is properly set up for testing (e.g., test database configuration created by `docker compose up` command).
 
+## Swagger Documentation
+
+The Swagger UI can be accessed directly through your web browser at:
+
+```bash
+http://localhost:8888/docs
+```
+
+### How to Use
+
+Navigate to the Swagger UI: Open the link provided above in a web browser.
+
+- **Authentication:** For endpoints requiring authentication, you can enter authentication credentials directly within the Swagger UI (`user: test, password: testpw`)
+- **Explore Endpoints:** Click on any endpoint to expand its details. You will see the HTTP method, URL path, description, parameters, request body examples.
+- **Execute Requests:** Use the "Try it out" feature to fill in the required parameters or request body and execute the request.
+
 ## Contributing
 
 Encourage contributions and provide guidelines on how to do so effectively. For instance:
@@ -92,3 +108,7 @@ Encourage contributions and provide guidelines on how to do so effectively. For 
 3. Commit your changes (`git commit -am 'Add some AmazingFeature'`).
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a Pull Request.
+
+## License
+
+This project is open-source and available under the MIT License.

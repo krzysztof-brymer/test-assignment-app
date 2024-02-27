@@ -7,6 +7,11 @@ import { Service } from 'typedi';
 @Middleware({ type: 'before' })
 export class BasicAuthMiddleware implements ExpressMiddlewareInterface {
   public use(req: Request, res: Response, next: NextFunction): void {
+    // Skip authentication for /docs route
+    if (req.path.startsWith('/docs')) {
+      return next();
+    }
+
     const basicAuth = serverConfig.basicAuth;
     const authHeader = req.headers['authorization'];
 
