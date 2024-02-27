@@ -1,22 +1,20 @@
 {
   "compilerOptions": {
-    "allowJs": true /* Allows javascript files to be part of our code */,
-    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility */,
-    "baseUrl": "./src" /* Specifies the base directory to resolve non-relative module names */,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "outDir": "./dist",
     "paths": {
-      /* This one specifies a set of entries to re-map imports */ "~/*": ["./*"]
+      "~/*": ["./*"]
     },
-    "module": "commonjs" /* Specifies which module code is generated */,
-    "target": "ES6" /* Sets the javascript version of the emitted typescript */,
-    "lib": [
-      "es2021"
-    ] /* Specify a set of bundled library declaration files that describe the target runtime environment */,
-    "outDir": "./dist" /* Specifies the folder for the emitted code */,
-    "strict": true /* Enables all the strict type-checking options */,
-    "noImplicitAny": false /* Enables errors with expressions using 'any' */,
-    "resolveJsonModule": true /* Enables importing json files */,
-    "moduleResolution": "node" /* Specifies how typescript looks up a file for a given module */,
-    "forceConsistentCasingInFileNames": true /* Ensure that casing is okay in imports */,
+    "module": "commonjs",
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "strict": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "importHelpers": true,
@@ -28,18 +26,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "types": [
-      "node",
-      "jest"
-    ] /* Specify a set of type declaration files to be included in the compilation */
+    "types": ["node", "jest", "typescript"]
   },
-  "compileOnSave": true /* Enables compile on save for this project */,
-  "include": [
-    /* Specifies the files which will be compiled */ "src/**/*",
-    "jest.config.ts"
-  ],
-  "exclude": [
-    /* Specifies the files which will be excluded from the build */
-    "node_modules"
-  ]
+  "compileOnSave": true,
+  "include": ["src/**/*", "jest.config.ts", "jest.setup.ts"],
+  "exclude": ["node_modules"]
 }

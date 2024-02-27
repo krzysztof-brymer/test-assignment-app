@@ -6,7 +6,7 @@ const jestConfig: JestConfigWithTsJest = {
   testRegex: '(/test/.*|(\\.|/)(test|spec))\\.ts$',
   testPathIgnorePatterns: ['/lib/', '/node_modules/', 'config.test.ts'],
   moduleFileExtensions: ['ts', 'json', 'js', 'node'],
-  silent: false
+  setupFilesAfterEnv: ['./jest.setup.ts']
 };
 
 export default jestConfig;

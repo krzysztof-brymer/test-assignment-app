@@ -26,7 +26,6 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get('/users')
-  @UseBefore(BasicAuthMiddleware)
   async getAllUsers(): Promise<User[]> {
     console.info(`Get all customers from DB.`);
 

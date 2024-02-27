@@ -6,9 +6,6 @@ dotenv.config();
 const isTestEnvironment =
   process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() === 'test';
 
-console.log(isTestEnvironment);
-console.log(process.env.NODE_ENV);
-
 export const dbConfig: PostgresConnectionOptions = isTestEnvironment
   ? {
       type: 'postgres',

@@ -12,16 +12,10 @@ export interface ServerConfig {
 }
 
 export const serverConfig: ServerConfig = {
-  port: Number(process.env.PORT) ?? 8888,
-  host: process.env.HOST ?? 'localhost',
-  basicAuth: {
-    username: process.env.BASIC_AUTH_USERNAME ?? 'test',
-    password: process.env.BASIC_AUTH_PASSWORD ?? 'testpw'
-  }
-};
-
-export const serverConfigTest: ServerConfig = {
-  port: Number(process.env.PORT_TEST) ?? 8887,
+  port:
+    process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() === 'test'
+      ? Number(process.env.PORT_TEST) ?? 8887
+      : Number(process.env.PORT) ?? 8888,
   host: process.env.HOST ?? 'localhost',
   basicAuth: {
     username: process.env.BASIC_AUTH_USERNAME ?? 'test',

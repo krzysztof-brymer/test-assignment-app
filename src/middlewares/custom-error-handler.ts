@@ -19,8 +19,10 @@ export class CustomErrorHandlerMiddleware
     let errors = undefined;
 
     if (error instanceof HttpError) {
-      console.log('here');
-      if (error['errors'].every((err: any) => err instanceof ValidationError)) {
+      if (
+        Array.isArray(error['errors']) &&
+        error['errors'].every((err: any) => err instanceof ValidationError)
+      ) {
         errors = error['errors'].map((err: ValidationError) => {
           return {
             property: err.property,

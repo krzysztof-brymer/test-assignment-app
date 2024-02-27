@@ -9,7 +9,7 @@ Authorization: Basic test:testpw
 
 ### Get user by id ###
 
-GET {{localhost}}/users/0b66c48b-1368-4295-b06b-98816828037
+GET {{localhost}}/users/0bd80bb2-5b2a-4edc-8830-53ce22d
 Authorization: Basic test:testpw
 
 ### Create user ###
@@ -18,7 +18,7 @@ Authorization: Basic test:testpw
 Content-Type: application/json
 
 {
-    "name": "test3",
+    "name": "test 3",
     "email": "test@mail.com"
 }
 
@@ -28,8 +28,8 @@ Authorization: Basic test:testpw
 Content-Type: application/json
 
 {
-    "name": "sss",
-    "email": "nieemail@wp.pl"
+    "name": "test",
+    "email": "test@test.pl"
 }
 
 ### Delete user by id ###

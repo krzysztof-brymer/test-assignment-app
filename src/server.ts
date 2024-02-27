@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 import Container from 'typedi';
 
-// import { ServerConfig } from './configs/server-config';
 import {
   RoutingControllersOptions,
   createExpressServer,
@@ -26,18 +25,6 @@ export const routingControllerOptions: RoutingControllersOptions = {
   validation: true
 };
 
-// export const createServer = async ({
-//   serverConfig
-// }: {
-//   serverConfig: ServerConfig;
-// }) => {
-const app = createExpressServer(routingControllerOptions);
+const server = createExpressServer(routingControllerOptions);
 
-// return app.listen(serverConfig.port, () => {
-//   console.info(
-//     `⚡️[server]: server is running at http://${serverConfig.host}:${serverConfig.port}`
-//   );
-// });
-// };
-
-export default app;
+export default server;
