@@ -122,7 +122,7 @@ describe('UserController', () => {
     });
   });
 
-  describe('POST /user', () => {
+  describe('POST /users', () => {
     it('should create new user', async () => {
       const createUserRequest: CreateUser = {
         name: 'Chris',
@@ -162,7 +162,7 @@ describe('UserController', () => {
     );
   });
 
-  describe('PUT /user/:id', () => {
+  describe('PUT /users/:id', () => {
     it('should update user', async () => {
       const user = {
         name: 'John',
@@ -232,7 +232,7 @@ describe('UserController', () => {
     );
   });
 
-  describe('DELETE /user/:id', () => {
+  describe('DELETE /users/:id', () => {
     it('should delete user', async () => {
       const user = {
         name: 'John',

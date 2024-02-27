@@ -42,7 +42,7 @@ Follow these steps to set up the project locally:
 
 ### Using Docker Compose
 
-For convenience, you can use Docker Compose to run your application alongside its dependencies:
+For convenience, you can use Docker Compose to run both databases locally:
 
 - Postgres Database
 - test Postgres Database
